@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppStore } from '../store/appStore';
 import { BarChart3, TrendingUp, Users, Heart } from 'lucide-react';
-import gsap from 'gsap';
 
 const DashboardPage: React.FC = () => {
   const navigate = useNavigate();

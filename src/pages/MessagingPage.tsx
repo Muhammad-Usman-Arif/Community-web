@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Send, Search, User, MessageCircle, Phone, Video, Menu, X } from 'lucide-react';
+import { Send, Search, MessageCircle, Phone, Video, Menu } from 'lucide-react';
 import { useAppStore } from '../store/appStore';
-import { useAuth } from '../hooks/useAuth';
 
 interface Conversation {
   id: string;
@@ -13,15 +12,6 @@ interface Conversation {
   online: boolean;
 }
 
-interface Message {
-  id: string;
-  senderId: string;
-  senderName: string;
-  text: string;
-  time: string;
-  isOwn: boolean;
-}
-
 const MessagingPage: React.FC = () => {
   const [selectedConversation, setSelectedConversation] = useState<string | null>(null);
   const [messageText, setMessageText] = useState('');
@@ -29,8 +19,7 @@ const MessagingPage: React.FC = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const { currentUser, messages, fetchMessages, sendMessage } = useAppStore();
-  const { user } = useAuth();
+  const { currentUser, sendMessage } = useAppStore();
 
   // Mock conversations for demo (replace with real store data)
   const conversations: Conversation[] = [

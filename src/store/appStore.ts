@@ -5,7 +5,6 @@ import {
   getHelpRequests as getHelpRequestsOp,
   sendMessage as sendMessageOp,
   getMessages as getMessagesOp,
-  getConversations as getConversationsOp,
   createNotification as createNotificationOp,
   getNotifications as getNotificationsOp,
   updateUser,
@@ -24,8 +23,6 @@ interface AppState {
   fetchHelpRequests: (filters?: { category?: string; urgency?: string; status?: string; searchTerm?: string }) => Promise<void>;
   
   messages: Message[];
-  setMessages: (messages: Message[]) => void;
-  addMessage: (message: Message) => void;
   setMessages: (messages: Message[]) => void;
   addMessage: (message: Message) => void;
   sendMessage: (message: Omit<Message, 'id' | 'createdAt'>) => Promise<string>;

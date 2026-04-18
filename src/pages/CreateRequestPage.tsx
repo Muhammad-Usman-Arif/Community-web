@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppStore } from '../store/appStore';
 import { useAuth } from '../hooks/useAuth';
-import { Tag, MapPin, Clock, Send, X } from 'lucide-react';
-import type { HelpRequest } from '../types';
+import { Tag, MapPin, Send, X } from 'lucide-react';
 
 const CreateRequestPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -49,6 +48,8 @@ const CreateRequestPage: React.FC = () => {
         urgency: formData.urgency,
         location: formData.location || undefined,
         createdBy: formData.createdBy,
+        status: formData.status,
+        helpers: formData.helpers,
       });
       setSuccess(true);
       setTimeout(() => navigate('/explore'), 2000);

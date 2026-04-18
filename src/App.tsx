@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
-import { useEffect } from 'react';
-import React, { Suspense } from 'react';
+import { useEffect, Suspense } from 'react';
 import { useAppStore } from './store/appStore';
 import './App.css';
 

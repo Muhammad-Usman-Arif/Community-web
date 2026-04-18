@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bell, CheckCircle, MessageSquare, UserCheck, Award, Trash2, Filter } from 'lucide-react';
+import { Bell, CheckCircle, MessageSquare, UserCheck, Award, Filter } from 'lucide-react';
 
 const NotificationsPage: React.FC = () => {
   const notifications = [

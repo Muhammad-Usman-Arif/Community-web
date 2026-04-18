@@ -1,5 +1,5 @@
 import React from 'react';
-import { Brain, Zap, Lightbulb, Bot, Code } from 'lucide-react';
+import { Brain, Zap, Lightbulb, Bot } from 'lucide-react';
 
 const AICenterPage: React.FC = () => {
   const features = [

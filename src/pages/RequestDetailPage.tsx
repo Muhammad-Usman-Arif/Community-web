@@ -9,7 +9,7 @@ import type { HelpRequest } from '../types';
 const RequestDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const { currentUser, sendMessage } = useAppStore();
+  const { sendMessage } = useAppStore();
   const { user } = useAuth();
   const [request, setRequest] = useState<HelpRequest | null>(null);
   const [loading, setLoading] = useState(true);
@@ -31,12 +31,15 @@ const RequestDetailPage: React.FC = () => {
   }, [id]);
 
   const handleSendMessage = async (recipientId: string) => {
-    if (!messageText.trim() || !user) return;
+    if (!messageText.trim() || !user || !request) return;
     try {
       await sendMessage({
         senderId: user.id,
+        senderName: user.name || 'User',
         recipientId,
+        recipientName: 'User',
         content: messageText.trim(),
+        read: false,
       });
       setMessageText('');
       alert('Message sent!');
