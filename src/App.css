@@ -1,0 +1,61 @@
+/* Vite + React template styles - minimal */
+:root {
+  --accent: #ffffff;
+  --accent-bg: rgba(255, 255, 255, 0.1);
+  --accent-border: rgba(255, 255, 255, 0.3);
+  --border: rgba(255, 255, 255, 0.1);
+  --text-h: #ffffff;
+  --social-bg: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background: transparent;
+  font-family: 'Inter', system-ui;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero {
+    animation: floatHero 6s ease-in-out infinite;
+  }
+}
+
+@keyframes floatHero {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.counter, .hero svg {
+  animation-duration: 20s;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Disable Vite template styles - use Tailwind only */
+.hero, .counter, #next-steps, #center {
+  display: none !important;
+}
+
+/* Ensure Tailwind content shows */
+#root > * {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
